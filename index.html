@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swap Oficial | Konekta internet</title>
+    <title>Konekta internet | Swap & Chart Oficial</title>
     
     <style>
-        /* DISEÑO PROFESIONAL KONEKTA */
+        /* DISEÑO PROFESIONAL KONEKTA - DERECHO PRIVADO */
         body { 
-            font-family: 'Segoe UI', Roboto, sans-serif; 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
             background: radial-gradient(circle at center, #1a1c20 0%, #000000 100%); 
             color: #ffffff; 
             margin: 0;
@@ -16,15 +16,27 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        .header { padding: 40px 20px; text-align: center; }
+        /* Bloqueo de interacción visual para proteger PI */
+        img, .logo-web {
+            user-drag: none;
+            -webkit-user-drag: none;
+            user-select: none;
+            pointer-events: none;
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .header { padding: 50px 20px; text-align: center; }
         
         .main-link { text-decoration: none; transition: 0.3s; }
         .main-link:hover { opacity: 0.8; }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: #f3ba2f; 
             margin: 10px 0;
             letter-spacing: -1px;
@@ -33,85 +45,101 @@
         .ticker-badge {
             background: #f3ba2f;
             color: #000;
-            padding: 2px 10px;
-            border-radius: 5px;
+            padding: 2px 12px;
+            border-radius: 6px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         .contract-box {
             background: rgba(255, 255, 255, 0.05);
-            padding: 12px 20px;
+            padding: 12px 25px;
             border-radius: 50px;
             font-size: 0.85rem;
             border: 1px solid rgba(243, 186, 47, 0.4);
             margin: 20px 0;
             display: inline-block;
             cursor: pointer;
+            transition: 0.3s;
         }
+        .contract-box:hover { background: rgba(243, 186, 47, 0.1); }
 
-        .add-metamask-btn {
-            background: #e2761b;
-            color: white;
-            border: none;
+        .btn-container { margin-bottom: 30px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+
+        .btn {
             padding: 12px 25px;
             border-radius: 25px;
             cursor: pointer;
             font-weight: bold;
-            margin-bottom: 30px;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(226, 118, 27, 0.3);
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
         }
 
-        .add-metamask-btn:hover { background: #d06700; transform: translateY(-2px); }
+        .btn-metamask { background: #e2761b; color: white; box-shadow: 0 4px 15px rgba(226, 118, 27, 0.3); }
+        .btn-metamask:hover { background: #d06700; transform: translateY(-2px); }
 
-        /* Protecciones de Propiedad Intelectual */
-        img, .logo-web {
-            user-drag: none;
-            user-select: none;
-            pointer-events: none;
-            max-width: 200px;
-            height: auto;
-        }
+        .btn-chart { background: #333; color: white; border: 1px solid #444; }
+        .btn-chart:hover { background: #444; border-color: #f3ba2f; }
 
+        /* Contenedores de Widgets */
         .swap-wrapper {
             box-shadow: 0 0 50px rgba(0,0,0,0.8);
             border-radius: 24px;
             background: #191b1f;
             border: 1px solid #2c2f36;
             overflow: hidden;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+        }
+
+        .chart-wrapper {
+            width: 95%;
+            max-width: 1100px;
+            height: 600px;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #2c2f36;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            margin-bottom: 60px;
         }
 
         .legal-footer {
             margin-top: auto;
-            padding: 40px 20px;
-            font-size: 0.75rem;
+            padding: 50px 20px;
+            font-size: 0.8rem;
             color: #777;
             text-align: center;
-            max-width: 700px;
+            max-width: 800px;
+            background: rgba(0,0,0,0.3);
+            width: 100%;
         }
 
-        .footer-links a { color: #f3ba2f; text-decoration: none; font-weight: bold; margin: 0 10px; }
+        .footer-links a { color: #f3ba2f; text-decoration: none; font-weight: bold; margin: 0 15px; }
+        .footer-links a:hover { text-decoration: underline; }
     </style>
 </head>
 <body oncontextmenu="return false;">
 
     <div class="header">
         <a href="https://www.konektainternet.com" class="main-link" target="_blank">
-            <!-- ARCHIVO: konekta-logo.png -->
             <img src="konekta-logo.png" alt="Konekta Logo" class="logo-web">
             <h1>Konekta internet <span class="ticker-badge">Konekta</span></h1>
         </a>
-        <p>Interfaz de Intercambio Segura y Protegida</p>
+        <p>Plataforma Oficial de Intercambio y Monitoreo en Tiempo Real</p>
         
         <div class="contract-box" onclick="window.open('https://bscscan.com', '_blank')">
             Contrato: <strong>0x8969E4036FA4f5Dba871A6c36BE2d4C44373106d</strong>
         </div>
-        <br>
-        <button class="add-metamask-btn" onclick="addToken()">🦊 Añadir Konekta a MetaMask</button>
+        
+        <div class="btn-container">
+            <button class="btn btn-metamask" onclick="addToken()">🦊 Añadir a MetaMask</button>
+            <button class="btn btn-chart" onclick="document.getElementById('chart-section').scrollIntoView({behavior: 'smooth'})">📊 Ver Gráfico</button>
+        </div>
     </div>
 
+    <!-- WIDGET DE SWAP -->
     <div class="swap-wrapper">
         <iframe
             src="https://pancakeswap.finance"
@@ -121,18 +149,28 @@
         ></iframe>
     </div>
 
+    <!-- WIDGET DE GRÁFICO (DEXSCREENER) -->
+    <div class="chart-wrapper" id="chart-section">
+        <iframe 
+            src="https://dexscreener.com" 
+            style="width: 100%; height: 100%; border: none;"
+        ></iframe>
+    </div>
+
     <footer class="legal-footer">
-        <p class="footer-links">
-            <a href="https://www.konektainternet.com" target="_blank">Web Oficial</a> | 
-            <a href="https://bscscan.com" target="_blank">BscScan</a>
-        </p>
-        <p>© 2017 - <span id="year"></span> <strong>Konekta internet</strong>. Derechos Reservados.</p>
-        <p>Software de Derecho Privado bajo Licencia Propietaria.</p>
+        <div class="footer-links" style="margin-bottom: 15px;">
+            <a href="https://www.konektainternet.com" target="_blank">Página Principal</a>
+            <a href="https://bscscan.com" target="_blank">BscScan Oficial</a>
+        </div>
+        <p>© 2017 - <span id="year"></span> <strong>Konekta internet</strong>. Todos los derechos reservados.</p>
+        <p>Este sitio y su contenido son de <strong>Derecho Privado</strong>. Queda prohibida la reproducción, duplicación o uso comercial de los activos visuales y estructura de software sin autorización expresa del titular.</p>
     </footer>
 
     <script>
+        // Actualización dinámica del año
         document.getElementById("year").textContent = new Date().getFullYear();
 
+        // Función para añadir token a MetaMask
         async function addToken() {
             if (window.ethereum) {
                 try {
@@ -144,17 +182,18 @@
                                 address: '0x8969E4036FA4f5Dba871A6c36BE2d4C44373106d',
                                 symbol: 'Konekta',
                                 decimals: 9,
-                                // ARCHIVO: konekta-token.png
                                 image: 'https://aumred.github.io',
                             },
                         },
                     });
                 } catch (e) { console.error(e); }
             } else {
-                alert("Por favor, instala MetaMask.");
+                alert("Por favor, instala una billetera Web3 (MetaMask) para usar esta función.");
             }
         }
-    </script>
 
+        // Aviso preventivo en consola
+        console.log("%cKONEKTA INTERNET - PROPIEDAD PROTEGIDA DESDE 2017", "color: #f3ba2f; font-size: 18px; font-weight: bold;");
+    </script>
 </body>
 </html>
